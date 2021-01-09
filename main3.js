@@ -19,7 +19,7 @@ function getData(type, cb) {
     };
 }
 
-function writetoDocument(type) {
+function writeToDocument(type) {
     getData(type, function(data) {
         document.getElementById("data").innerHTML = data;
     })

@@ -20,5 +20,5 @@ function getData(cb) {
 function printDataToConsole(data) {
     console.log(data);
 }
-
+// Calling getData(printDataToConsole) here is passing the function into getData() to be run
 getData(printDataToConsole);

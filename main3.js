@@ -1,10 +1,10 @@
 
 const baseURL = "https://ci-swapi.herokuapp.com/api/";
 
-function getData(cb) {
+function getData(type, cb) {
     var xhr = new XMLHttpRequest();
     // Open a Connection (GET to retrieve/POST to send, URL we want to retrieve/send to)
-    xhr.open("GET", baseURL + type);
+    xhr.open("GET", baseURL + type + "/");
     // Send Request
     xhr.send(); 
     // Listener here is waiting for xhr's state to change, will add responseText if everything okay

@@ -22,4 +22,5 @@ function printDataToConsole(data) {
     console.log(data);
 }
 // Calling getData(printDataToConsole) here is passing the function into getData() to be run
+// Callbacks are only invoked when we want them to be
 getData(printDataToConsole);

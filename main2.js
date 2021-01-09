@@ -12,6 +12,7 @@ function getData(cb) {
     // status code 200 means request succeeded
     xhr.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
+            // When script gets to this stage it runs the function that we passed to getData() as an argument
             cb(JSON.parse(this.responseText));
         }
     };

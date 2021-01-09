@@ -1,3 +1,5 @@
+// Callback Example
+
 function getData(cb) {
     var xhr = new XMLHttpRequest();
     // Open a Connection (GET to retrieve/POST to send, URL we want to retrieve/send to)

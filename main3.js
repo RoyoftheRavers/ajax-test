@@ -1,4 +1,4 @@
-
+// Get Data printed on screen and start unpacking it
 const baseURL = "https://ci-swapi.herokuapp.com/api/";
 
 function getData(type, cb) {
@@ -19,8 +19,11 @@ function getData(type, cb) {
     };
 }
 
+// Get Data printed on screen
 function writeToDocument(type) {
     getData(type, function(data) {
+        // Determine how to access data and browse through object and see its format
+        console.dir(data);
         document.getElementById("data").innerHTML = data;
     })
 }

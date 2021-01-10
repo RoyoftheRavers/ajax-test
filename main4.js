@@ -21,9 +21,14 @@ function getData(type, cb) {
 
 // Get Data printed on screen
 function writeToDocument(type) {
+    // Set el to an empty string so it is cleared every time a button is clicked
+    var el = document.getElementById("data");
+    el.innerHTML = "";
     getData(type, function(data) {
-        // Determine how to access data and browse through object and see its format
-        console.dir(data);
-        document.getElementById("data").innerHTML = data.results;
+        data = data.results;
+
+        data.forEach(function(item){
+        el.innerHTML += "<p>" + item.name + "</p>"; 
+        });
     });
 }

@@ -19,19 +19,37 @@ function getData(type, cb) {
     };
 }
 
+// initialise array and iterate over the arrays
+function getTableHeaders(obj) {
+    var tableHeaders = [];
+
+    Object.keys(obj).forEach(function(key) {
+        tableHeaders.push(`<td>${key}</td>`)
+    });
+
+    return `<tr>${tableHeaders}</tr>`;
+}
 // Get Data printed on screen
 function writeToDocument(type) {
+    // New array to house each row of data for us
+    var tableRows = [];
     // Set el to an empty string so it is cleared every time a button is clicked
     var el = document.getElementById("data");
     el.innerHTML = "";
     getData(type, function(data) {
         data = data.results;
+        var tableHeaders = getTableHeaders(data[0]);
 
         data.forEach(function(item){
+            var dataRow = [];
+
             Object.keys(item).forEach(function(key) {
-                console.log(key);
-            })
-            el.innerHTML += "<p>" + item.name + "</p>";
+                dataRow.push(`<td>${item[key]}</td>`)
+            });
+            tableRows.push(dataRow);
         });
+
+        el.innerHTML = `<table>${tableHeaders}${tableRows}</table>`;
+
     });
 }
